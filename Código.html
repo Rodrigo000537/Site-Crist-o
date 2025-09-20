@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma jornada espiritual para conhecer Jesus Cristo">
+    <title>Conhecer Jesus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background particles for spiritual ambiance -->
+    <div id="particles-container"></div>
+
+    <!-- Screen 1: Welcome -->
+    <div id="screen-1" class="screen active" role="main">
+        <div class="welcome-container">
+            <div class="divine-light"></div>
+            <div class="welcome-content">
+                <div class="cross-symbol">✝</div>
+                <h1 class="welcome-title">Paz de Cristo</h1>
+                <p class="welcome-text" id="welcome-message">
+                    Se você está aqui, é porque o Espírito Santo o conduziu. 
+                    Vamos juntos aprofundar nosso conhecimento sobre Nosso Senhor Jesus Cristo 
+                    e fortalecer nossa fé através da oração e das Sagradas Escrituras.
+                </p>
+                <button class="primary-btn" id="conhecer-btn" aria-describedby="welcome-message">
+                    <span class="btn-icon">🙏</span>
+                    Iniciar Jornada Espiritual
+                </button>
+            </div>
+            <button class="audio-btn" id="welcome-audio-btn" aria-label="Ouvir mensagem de boas-vindas">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9V15H7L12 20V4L7 9H3Z" fill="currentColor"/>
+                    <path d="M16.5 12C16.5 10.23 15.48 8.71 14 7.97V16.02C15.48 15.29 16.5 13.77 16.5 12Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Screen 2: Loading -->
+    <div id="screen-2" class="screen loading-screen" role="main">
+        <div class="loading-content">
+            <div class="sacred-heart">
+                <div class="heart-glow"></div>
+                <svg class="heart-icon" width="80" height="80" viewBox="0 0 100 100" fill="none">
+                    <path d="M50 85C45 75 25 60 25 40C25 30 32 25 42 25C46 25 50 27 50 30C50 27 54 25 58 25C68 25 75 30 75 40C75 60 55 75 50 85Z" fill="url(#heartGradient)"/>
+                    <defs>
+                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b6b"/>
+                            <stop offset="100%" style="stop-color:#c44569"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <p class="loading-text">Chegando ao Coração de Jesus</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 3: Main Menu -->
+    <div id="screen-3" class="screen menu-screen" role="main">
+        <div class="menu-header">
+            <h1 class="menu-title">Para onde deseja ir?</h1>
+            <p class="menu-subtitle">Escolha sua prática espiritual</p>
+        </div>
+        <div class="menu-options" role="navigation" aria-label="Menu principal">
+            <button class="menu-card" id="rosary-option" data-option="rosary">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <div class="card-icon">📿</div>
+                    <h2>Santo Terço</h2>
+                    <p>Rezar o Rosário diariamente conforme os mistérios</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </button>
+            <button class="menu-card" id="bible-option" data-option="bible">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <div class="card-icon">📖</div>
+                    <h2>Sagrada Escritura</h2>
+                    <p>Ler e meditar na Palavra de Deus</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </button>
+            <button class="menu-card" id="jesus-option" data-option="jesus">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <div class="card-icon">✝️</div>
+                    <h2>Vida de Cristo</h2>
+                    <p>Conhecer mais sobre Nosso Senhor Jesus</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Rosary Screen -->
+    <div id="rosary-screen" class="screen sub-screen" role="main">
+        <div class="sub-header">
+            <h2>Santo Terço</h2>
+            <p class="sub-description">Escolha o dia para rezar os mistérios correspondentes</p>
+        </div>
+        <div class="day-selector" role="radiogroup" aria-label="Escolha o dia da semana">
+            <button class="day-btn" data-day="monday">
+                <span class="day-name">Segunda</span>
+                <span class="mystery-type">Mistérios Gozosos</span>
+            </button>
+            <button class="day-btn" data-day="tuesday">
+                <span class="day-name">Terça</span>
+                <span class="mystery-type">Mistérios Dolorosos</span>
+            </button>
+            <button class="day-btn" data-day="wednesday">
+                <span class="day-name">Quarta</span>
+                <span class="mystery-type">Mistérios Gloriosos</span>
+            </button>
+            <button class="day-btn" data-day="thursday">
+                <span class="day-name">Quinta</span>
+                <span class="mystery-type">Mistérios Luminosos</span>
+            </button>
+            <button class="day-btn" data-day="friday">
+                <span class="day-name">Sexta</span>
+                <span class="mystery-type">Mistérios Dolorosos</span>
+            </button>
+            <button class="day-btn" data-day="saturday">
+                <span class="day-name">Sábado</span>
+                <span class="mystery-type">Mistérios Gozosos</span>
+            </button>
+            <button class="day-btn" data-day="sunday">
+                <span class="day-name">Domingo</span>
+                <span class="mystery-type">Mistérios Gloriosos</span>
+            </button>
+        </div>
+        <div id="rosary-content" class="rosary-content" style="display: none;">
+            <div class="mystery-header">
+                <h3 id="mystery-title"></h3>
+            </div>
+            <div id="rosary-script" class="rosary-script"></div>
+            <div class="audio-controls">
+                <button id="play-rosary" class="primary-btn">
+                    <span class="btn-icon">▶️</span>
+                    Iniciar Oração
+                </button>
+                <button id="pause-rosary" class="secondary-btn" style="display: none;">
+                    <span class="btn-icon">⏸️</span>
+                    Pausar
+                </button>
+            </div>
+        </div>
+        <button class="back-btn" id="back-btn-rosary">← Voltar</button>
+    </div>
+
+    <!-- Bible Screen -->
+    <div id="bible-screen" class="screen sub-screen" role="main">
+        <div class="sub-header">
+            <h2>Sagrada Escritura</h2>
+            <p class="sub-description">A Palavra de Deus para sua meditação diária</p>
+        </div>
+        <div class="bible-header">
+            <div class="search-area">
+                <input type="search" id="bible-search" placeholder="Buscar versículos..." aria-label="Buscar na Bíblia">
+                <button id="choose-book-btn" class="secondary-btn">Escolher Livro</button>
+            </div>
+            <button id="magic-verse-btn" class="magic-btn" aria-label="Versículo inspirado">
+                ✨ Versículo do Dia
+            </button>
+        </div>
+        <div id="bible-content" class="bible-content">
+            <div class="bible-placeholder">
+                <div class="bible-icon">📖</div>
+                <h3>Bem-vindo às Sagradas Escrituras</h3>
+                <p>Selecione um livro e capítulo para iniciar sua leitura orante, ou clique em "Versículo do Dia" para uma inspiração divina.</p>
+            </div>
+        </div>
+        <div class="bible-controls">
+            <button id="font-smaller" class="control-btn" aria-label="Diminuir fonte">A-</button>
+            <button id="font-larger" class="control-btn" aria-label="Aumentar fonte">A+</button>
+            <div class="font-size-indicator">
+                <span>Tamanho: <span id="font-size-display">16px</span></span>
+            </div>
+        </div>
+        <button class="back-btn" id="back-btn-bible">← Voltar</button>
+    </div>
+
+    <!-- Jesus Screen -->
+    <div id="jesus-screen" class="screen sub-screen" role="main">
+        <div class="sub-header">
+            <h2>Vida de Nosso Senhor Jesus Cristo</h2>
+            <p class="sub-description">Aprofunde seu conhecimento sobre o Salvador</p>
+        </div>
+        <div class="jesus-content">
+            <div class="jesus-card" data-expandable>
+                <div class="card-header">
+                    <h3>Quem é Jesus Cristo? <span class="expand-icon">+</span></h3>
+                </div>
+                <div class="card-content">
+                    <p>Jesus Cristo é o Filho de Deus feito homem, a segunda pessoa da Santíssima Trindade. Verdadeiro Deus e verdadeiro homem, Ele veio ao mundo para nos redimir do pecado e nos dar a vida eterna. Em Jesus encontramos o amor infinito do Pai e a esperança da salvação.</p>
+                    <button class="listen-btn" data-text="Jesus Cristo é o Filho de Deus feito homem, a segunda pessoa da Santíssima Trindade. Verdadeiro Deus e verdadeiro homem, Ele veio ao mundo para nos redimir do pecado e nos dar a vida eterna.">
+                        🔊 Escutar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="jesus-card" data-expandable>
+                <div class="card-header">
+                    <h3>O Caminho da Santidade <span class="expand-icon">+</span></h3>
+                </div>
+                <div class="card-content">
+                    <p>A santidade é a vocação universal de todos os cristãos. Seguindo o exemplo de Jesus, somos chamados a viver uma vida de oração constante, caridade fraterna, obediência à vontade divina e prática das virtudes. A santidade se constrói no dia a dia, através dos pequenos sacrifícios e da união com Deus.</p>
+                    <button class="listen-btn" data-text="A santidade é a vocação universal de todos os cristãos. Seguindo o exemplo de Jesus, somos chamados a viver uma vida de oração constante, caridade fraterna e prática das virtudes.">
+                        🔊 Escutar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="jesus-card" data-expandable>
+                <div class="card-header">
+                    <h3>A Vida Terrena de Jesus <span class="expand-icon">+</span></h3>
+                </div>
+                <div class="card-content">
+                    <p>Jesus nasceu em Belém durante o reinado de César Augusto, foi criado em Nazaré e iniciou seu ministério público aos 30 anos. Durante três anos, percorreu a Palestina pregando o Reino de Deus, curando enfermos e ensinando sobre o amor divino. Sua morte e ressurreição são o centro da fé cristã.</p>
+                    <button class="listen-btn" data-text="Jesus nasceu em Belém, foi criado em Nazaré e iniciou seu ministério público aos 30 anos, pregando o Reino de Deus e ensinando sobre o amor divino.">
+                        🔊 Escutar
+                    </button>
+                </div>
+            </div>
+
+            <div class="jesus-card" data-expandable>
+                <div class="card-header">
+                    <h3>Os Ensinamentos de Cristo <span class="expand-icon">+</span></h3>
+                </div>
+                <div class="card-content">
+                    <p>Jesus nos ensinou as Bem-aventuranças, o Pai Nosso e os mandamentos do amor. Suas parábolas revelam verdades profundas sobre o Reino dos Céus. O Sermão da Montanha é o programa de vida cristã, onde aprendemos a amar os inimigos, perdoar as ofensas e buscar primeiro o Reino de Deus.</p>
+                    <button class="listen-btn" data-text="Jesus nos ensinou as Bem-aventuranças, o Pai Nosso e os mandamentos do amor. O Sermão da Montanha é o programa de vida cristã.">
+                        🔊 Escutar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="back-btn" id="back-btn-jesus">← Voltar</button>
+    </div>
+
+    <!-- Book Selection Modal -->
+    <div id="book-modal" class="modal" role="dialog" aria-labelledby="book-modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="book-modal-title">Escolher Livro Sagrado</h3>
+                <button class="close-modal" aria-label="Fechar seleção de livros">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="testament-tabs">
+                    <button class="tab-btn active" data-testament="old">Antigo Testamento</button>
+                    <button class="tab-btn" data-testament="new">Novo Testamento</button>
+                </div>
+                <div id="book-list" class="book-list">
+                    <!-- Books will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter Selection Modal -->
+    <div id="chapter-modal" class="modal" role="dialog" aria-labelledby="chapter-modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="chapter-modal-title">Escolher Capítulo</h3>
+                <button class="close-modal" aria-label="Fechar seleção de capítulos">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="chapter-list" class="chapter-list">
+                    <!-- Chapters will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio element for playback -->
+    <audio id="audio-player" preload="none"></audio>
+
+    <style>
+        :root {
+            --sacred-gold: #DAA520;
+            --divine-blue: #1e3a8a;
+            --holy-white: #fefefe;
+            --reverent-gray: #4a5568;
+            --blessed-cream: #faf9f7;
+            --celestial-light: #f0f4f8;
+            --sacred-shadow: rgba(30, 58, 138, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-strong: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--celestial-light) 0%, var(--blessed-cream) 100%);
+            color: var(--reverent-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Spiritual background particles */
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(218, 165, 32, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.02) 0%, transparent 50%);
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        /* Screen 1: Welcome */
+        .welcome-container {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .divine-light {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulseLight 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseLight {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+            50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .cross-symbol {
+            font-size: 4rem;
+            color: var(--sacred-gold);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(218, 165, 32, 0.3);
+            animation: gentleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes gentleGlow {
+            from { text-shadow: 0 0 20px rgba(218, 165, 32, 0.3); }
+            to { text-shadow: 0 0 30px rgba(218, 165, 32, 0.5); }
+        }
+
+        .welcome-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--divine-blue);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .welcome-text {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--reverent-gray);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: none;
+            letter-spacing: 0.02em;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto;
+        }
+
+        .primary-btn:hover, .primary-btn:focus {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-strong);
+            background: linear-gradient(135deg, #B8860B 0%, var(--sacred-gold) 100%);
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        .audio-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--divine-blue) 0%, #1e40af 100%);
+            border: none;
+            color: var(--holy-white);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .audio-btn:hover, .audio-btn:focus {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* Screen 2: Loading */
+        .loading-screen {
+            background: linear-gradient(135deg, var(--blessed-cream) 0%, var(--celestial-light) 100%);
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .sacred-heart {
+            position: relative;
+            margin-bottom: 2rem;
+            animation: heartBeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .heart-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+        }
+
+        .loading-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--reverent-gray);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(218, 165, 32, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .loading-progress {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--sacred-gold) 0%, #B8860B 100%);
+            animation: loadProgress 3s ease-in-out infinite;
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* Screen 3: Menu */
+        .menu-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--divine-blue);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .menu-subtitle {
+            font-size: 1.1rem;
+            color: var(--reverent-gray);
+            opacity: 0.8;
+        }
+
+        .menu-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .menu-card {
+            background: var(--holy-white);
+            border: none;
+            border-radius: 20px;
+            padding: 0;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: left;
+            min-height: 220px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .menu-card:hover, .menu-card:focus {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .card-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(218, 165, 32, 0.05) 100%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover .card-background {
+            opacity: 1;
+        }
+
+        .card-content {
+            position: relative;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--divine-blue);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .menu-card p {
+            color: var(--reverent-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .card-arrow {
+            align-self: flex-end;
+            color: var(--sacred-gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition);
+        }
+
+        .menu-card:hover .card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(74, 85, 104, 0.9);
+            backdrop-filter: blur(10px);
+            color: var(--holy-white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .back-btn:hover, .back-btn:focus {
+            background: var(--reverent-gray);
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Sub-screens */
+        .sub-screen {
+            padding-top: 2rem;
+        }
+
+        .sub-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sub-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--divine-blue);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .sub-description {
+            font-size: 1.1rem;
+            color: var(--reverent-gray);
+            opacity: 0.9;
+        }
+
+        /* Rosary Screen */
+        .day-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            max-width: 900px;
+        }
+
+        .day-btn {
+            padding: 1.5rem 1rem;
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            background: var(--holy-white);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .day-btn:hover, .day-btn:focus {
+            border-color: var(--sacred-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .day-btn.active {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+            border-color: var(--sacred-gold);
+        }
+
+        .day-name {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mystery-type {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .rosary-content {
+            max-width: 700px;
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .mystery-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .mystery-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--divine-blue);
+            font-weight: 600;
+        }
+
+        .rosary-script {
+            background: var(--holy-white);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            line-height: 2;
+            box-shadow: var(--shadow-soft);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .prayer-line {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .prayer-line.highlight {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(218, 165, 32, 0.2) 100%);
+            border-left: 4px solid var(--sacred-gold);
+            transform: translateX(5px);
+        }
+
+        .audio-controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .secondary-btn {
+            background: linear-gradient(135deg, var(--reverent-gray) 0%, #374151 100%);
+            color: var(--holy-white);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .secondary-btn:hover, .secondary-btn:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Bible Screen */
+        .bible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-area {
+            display: flex;
+            gap: 1rem;
+            flex: 1;
+            min-width: 350px;
+        }
+
+        #bible-search {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: var(--holy-white);
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+
+        #bible-search:focus {
+            outline: none;
+            border-color: var(--sacred-gold);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .magic-btn {
+            background: linear-gradient(135deg, var(--divine-blue) 0%, #1e40af 100%);
+            color: var(--holy-white);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+            white-space: nowrap;
+        }
+
+        .magic-btn:hover, .magic-btn:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .bible-content {
+            width: 100%;
+            max-width: 800px;
+            min-height: 400px;
+            background: var(--holy-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-soft);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .bible-placeholder {
+            text-align: center;
+            color: var(--reverent-gray);
+            padding: 3rem;
+        }
+
+        .bible-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .bible-placeholder h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--divine-blue);
+            margin-bottom: 1rem;
+        }
+
+        .verse {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .verse:hover {
+            background: rgba(218, 165, 32, 0.05);
+        }
+
+        .verse-number {
+            font-weight: 600;
+            color: var(--sacred-gold);
+            margin-right: 0.5rem;
+        }
+
+        .magic-verse {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .magic-verse h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--divine-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .magic-verse h4 {
+            color: var(--sacred-gold);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .verse-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--reverent-gray);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);
+            border-radius: 12px;
+            border-left: 4px solid var(--sacred-gold);
+        }
+
+        .bible-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn {
+            background: var(--holy-white);
+            color: var(--reverent-gray);
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .control-btn:hover, .control-btn:focus {
+            border-color: var(--sacred-gold);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .font-size-indicator {
+            background: var(--holy-white);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            font-size: 0.9rem;
+            color: var(--reverent-gray);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Jesus Screen */
+        .jesus-content {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .jesus-card {
+            background: var(--holy-white);
+            border: 2px solid rgba(218, 165, 32, 0.1);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .jesus-card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+
+        .card-header h3 {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--blessed-cream) 0%, var(--celestial-light) 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--divine-blue);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .card-header h3:hover {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+        }
+
+        .jesus-card .card-content {
+            padding: 0;
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .jesus-card.expanded .card-content {
+            display: block;
+            padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .jesus-card.expanded .expand-icon {
+            transform: rotate(45deg);
+        }
+
+        .expand-icon {
+            transition: var(--transition);
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        .jesus-card .card-content p {
+            line-height: 1.8;
+            color: var(--reverent-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .listen-btn {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .listen-btn:hover, .listen-btn:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--holy-white);
+            border-radius: 20px;
+            max-width: 600px;
+            max-height: 80vh;
+            width: 90%;
+            position: relative;
+            box-shadow: var(--shadow-strong);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: scale(0.9) translateY(20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid rgba(218, 165, 32, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--divine-blue);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--reverent-gray);
+            transition: var(--transition);
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            background: rgba(218, 165, 32, 0.1);
+            color: var(--sacred-gold);
+        }
+
+        .modal-body {
+            padding: 1rem 2rem 2rem;
+            overflow-y: auto;
+            max-height: calc(80vh - 100px);
+        }
+
+        .testament-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            background: var(--holy-white);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+            border-color: var(--sacred-gold);
+        }
+
+        .book-list, .chapter-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .book-list button, .chapter-list button {
+            padding: 1.2rem;
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            background: var(--holy-white);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .book-list button:hover, .chapter-list button:hover {
+            background: linear-gradient(135deg, var(--sacred-gold) 0%, #B8860B 100%);
+            color: var(--holy-white);
+            border-color: var(--sacred-gold);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2.2rem;
+            }
+
+            .welcome-text {
+                font-size: 1.1rem;
+            }
+
+            .menu-title {
+                font-size: 2rem;
+            }
+
+            .menu-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .bible-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-area {
+                min-width: unset;
+                flex-direction: column;
+            }
+
+            .screen {
+                padding: 1rem;
+            }
+
+            .back-btn {
+                bottom: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .audio-btn {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .day-selector {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .bible-content, .rosary-script {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .modal-header, .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        .screen:focus {
+            outline: none;
+        }
+
+        button:focus {
+            outline: 2px solid var(--sacred-gold);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--celestial-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(218, 165, 32, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(218, 165, 32, 0.5);
+        }
+    </style>
+
+    <script>
+        // Enhanced Spiritual App with Premium Features
+        class JesusApp {
+            constructor() {
+                this.currentScreen = 1;
+                this.screenHistory = [1];
+                this.audioPlayer = document.getElementById('audio-player');
+                this.currentAudio = null;
+                this.loadingDuration = 5000; // 5 seconds
+                this.rosaryData = this.initializeEnhancedRosaryData();
+                this.bibleData = null;
+                this.fontSize = 16;
+                this.isPlaying = false;
+                this.currentPrayerIndex = 0;
+                
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.setupAudio();
+                this.loadComprehensiveBibleData();
+                this.createParticleEffect();
+            }
+
+            createParticleEffect() {
+                const container = document.getElementById('particles-container');
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.style.cssText = `
+                        position: absolute;
+                        width: 2px;
+                        height: 2px;
+                        background: rgba(218, 165, 32, 0.3);
+                        border-radius: 50%;
+                        left: ${Math.random() * 100}%;
+                        top: ${Math.random() * 100}%;
+                        animation: float ${5 + Math.random() * 10}s ease-in-out infinite;
+                        animation-delay: ${Math.random() * 5}s;
+                    `;
+                    container.appendChild(particle);
+                }
+                
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+                        25% { transform: translateY(-20px) rotate(90deg); opacity: 0.8; }
+                        50% { transform: translateY(-10px) rotate(180deg); opacity: 0.5; }
+                        75% { transform: translateY(-30px) rotate(270deg); opacity: 0.7; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            setupEventListeners() {
+                // Screen 1 events
+                document.getElementById('conhecer-btn').addEventListener('click', () => {
+                    this.goToScreen(2);
+                });
+                
+                document.getElementById('welcome-audio-btn').addEventListener('click', () => {
+                    this.playWelcomeAudio();
+                });
+
+                // Screen 3 events
+                document.querySelectorAll('.menu-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const option = e.currentTarget.dataset.option;
+                        this.handleMenuOption(option);
+                    });
+                });
+
+                // Rosary events
+                document.querySelectorAll('.day-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.selectDay(e.currentTarget.dataset.day);
+                    });
+                });
+
+                document.getElementById('play-rosary').addEventListener('click', () => {
+                    this.playRosary();
+                });
+
+                document.getElementById('pause-rosary').addEventListener('click', () => {
+                    this.pauseRosary();
+                });
+
+                // Bible events
+                document.getElementById('choose-book-btn').addEventListener('click', () => {
+                    this.openBookSelector();
+                });
+
+                document.getElementById('magic-verse-btn').addEventListener('click', () => {
+                    this.showMagicVerse();
+                });
+
+                document.getElementById('font-smaller').addEventListener('click', () => {
+                    this.changeFontSize(-2);
+                });
+
+                document.getElementById('font-larger').addEventListener('click', () => {
+                    this.changeFontSize(2);
+                });
+
+                // Testament tabs
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.filterBooksByTestament(e.target.dataset.testament);
+                    });
+                });
+
+                // Jesus screen events
+                document.querySelectorAll('.jesus-card[data-expandable]').forEach(card => {
+                    card.querySelector('.card-header h3').addEventListener('click', () => {
+                        this.toggleCard(card);
+                    });
+                });
+
+                document.querySelectorAll('.listen-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const text = e.currentTarget.dataset.text;
+                        this.speakText(text, 'pt-BR');
+                    });
+                });
+
+                // Back buttons
+                document.querySelectorAll('.back-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.goBack();
+                    });
+                });
+
+                // Modal events
+                document.querySelectorAll('.close-modal').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.closeModal(e.currentTarget.closest('.modal'));
+                    });
+                });
+
+                document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                    overlay.addEventListener('click', () => {
+                        this.closeModal(overlay.closest('.modal'));
+                    });
+                });
+            }
+
+            setupAudio() {
+                if ('speechSynthesis' in window) {
+                    this.speechSynthesis = window.speechSynthesis;
+                    this.voices = [];
+                    
+                    const loadVoices = () => {
+                        this.voices = this.speechSynthesis.getVoices();
+                    };
+                    
+                    loadVoices();
+                    if (this.speechSynthesis.onvoiceschanged !== undefined) {
+                        this.speechSynthesis.onvoiceschanged = loadVoices;
+                    }
+                }
+            }
+
+            goToScreen(screenNumber) {
+                document.querySelector('.screen.active')?.classList.remove('active');
+                
+                const newScreen = document.getElementById(`screen-${screenNumber}`);
+                if (newScreen) {
+                    newScreen.classList.add('active');
+                    
+                    if (screenNumber !== this.screenHistory[this.screenHistory.length - 1]) {
+                        this.screenHistory.push(screenNumber);
+                    }
+                    this.currentScreen = screenNumber;
+                    
+                    if (screenNumber === 2) {
+                        this.handleLoadingScreen();
+                    } else if (screenNumber === 3) {
+                        this.playMenuAudio();
+                        this.showBackButton();
+                    }
+                    
+                    newScreen.setAttribute('tabindex', '-1');
+                    newScreen.focus();
+                }
+            }
+
+            goToSubScreen(screenId) {
+                document.querySelector('.screen.active')?.classList.remove('active');
+                
+                const subScreen = document.getElementById(screenId);
+                if (subScreen) {
+                    subScreen.classList.add('active');
+                    this.screenHistory.push(screenId);
+                    this.showBackButton();
+                    
+                    subScreen.setAttribute('tabindex', '-1');
+                    subScreen.focus();
+                }
+            }
+
+            goBack() {
+                if (this.screenHistory.length > 1) {
+                    this.screenHistory.pop();
+                    const previousScreen = this.screenHistory[this.screenHistory.length - 1];
+                    
+                    document.querySelector('.screen.active')?.classList.remove('active');
+                    
+                    let targetScreen;
+                    if (typeof previousScreen === 'number') {
+                        targetScreen = document.getElementById(`screen-${previousScreen}`);
+                        this.currentScreen = previousScreen;
+                    } else {
+                        targetScreen = document.getElementById(previousScreen);
+                    }
+                    
+                    if (targetScreen) {
+                        targetScreen.classList.add('active');
+                        
+                        if (this.screenHistory.length <= 1 || this.currentScreen === 1) {
+                            this.hideBackButton();
+                        }
+                        
+                        targetScreen.setAttribute('tabindex', '-1');
+                        targetScreen.focus();
+                    }
+                }
+            }
+
+            showBackButton() {
+                document.querySelectorAll('.back-btn').forEach(btn => {
+                    btn.style.display = 'block';
+                });
+            }
+
+            hideBackButton() {
+                document.querySelectorAll('.back-btn').forEach(btn => {
+                    btn.style.display = 'none';
+                });
+            }
+
+            handleLoadingScreen() {
+                const progressBar = document.querySelector('.loading-progress');
+                progressBar.style.animation = `loadProgress ${this.loadingDuration/1000}s ease-in-out forwards`;
+                
+                setTimeout(() => {
+                    this.goToScreen(3);
+                }, this.loadingDuration);
+            }
+
+            playWelcomeAudio() {
+                const welcomeText = "Se você está aqui, é porque o Espírito Santo o conduziu. Vamos juntos aprofundar nosso conhecimento sobre Nosso Senhor Jesus Cristo e fortalecer nossa fé através da oração e das Sagradas Escrituras.";
+                this.speakText(welcomeText, 'pt-BR');
+            }
+
+            playMenuAudio() {
+                const menuText = "Para onde deseja ir? Escolha sua prática espiritual.";
+                this.speakText(menuText, 'pt-BR');
+            }
+
+            speakText(text, language = 'pt-BR', preferMale = false) {
+                if (!this.speechSynthesis) return;
+
+                this.speechSynthesis.cancel();
+
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = language;
+                
+                let selectedVoice = null;
+                if (this.voices.length > 0) {
+                    const ptVoices = this.voices.filter(voice => 
+                        voice.lang.startsWith('pt')
+                    );
+                    
+                    if (preferMale && ptVoices.length > 0) {
+                        selectedVoice = ptVoices.find(voice => 
+                            voice.name.toLowerCase().includes('male') ||
+                            voice.name.toLowerCase().includes('masculino') ||
+                            voice.name.toLowerCase().includes('homem')
+                        ) || ptVoices[0];
+                    } else if (ptVoices.length > 0) {
+                        selectedVoice = ptVoices[0];
+                    } else {
+                        selectedVoice = this.voices[0];
+                    }
+                }
+                
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                }
+                
+                utterance.rate = 0.85;
+                utterance.pitch = 1;
+                
+                this.speechSynthesis.speak(utterance);
+            }
+
+            handleMenuOption(option) {
+                switch (option) {
+                    case 'rosary':
+                        this.goToSubScreen('rosary-screen');
+                        break;
+                    case 'bible':
+                        this.goToSubScreen('bible-screen');
+                        break;
+                    case 'jesus':
+                        this.goToSubScreen('jesus-screen');
+                        break;
+                }
+            }
+
+            initializeEnhancedRosaryData() {
+                return {
+                    monday: {
+                        mystery: "Mistérios Gozosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso, criador do céu e da terra...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai, ao Filho e ao Espírito Santo...",
+                            "🎺 1º Mistério: A Anunciação do Anjo Gabriel a Nossa Senhora",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 2º Mistério: A Visitação de Nossa Senhora à Santa Isabel",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 3º Mistério: O Nascimento de Jesus em Belém",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 4º Mistério: A Apresentação do Menino Jesus no Templo",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 5º Mistério: O Menino Jesus perdido e achado no Templo",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    tuesday: {
+                        mystery: "Mistérios Dolorosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "😢 1º Mistério: A Agonia de Jesus no Horto",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 2º Mistério: A Flagelação de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 3º Mistério: A Coroação de Espinhos",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 4º Mistério: Jesus carrega a Cruz no caminho do Calvário",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 5º Mistério: A Crucificação e Morte de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    wednesday: {
+                        mystery: "Mistérios Gloriosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "🌟 1º Mistério: A Ressurreição de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 2º Mistério: A Ascensão de Jesus aos Céus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 3º Mistério: A Descida do Espírito Santo sobre os Apóstolos",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 4º Mistério: A Assunção de Nossa Senhora aos Céus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 5º Mistério: A Coroação de Nossa Senhora no Céu",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    thursday: {
+                        mystery: "Mistérios Luminosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "💧 1º Mistério: O Batismo de Jesus no Rio Jordão",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "💒 2º Mistério: A Auto-revelação de Jesus nas Bodas de Caná",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "👑 3º Mistério: O Anúncio do Reino de Deus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "⛰️ 4º Mistério: A Transfiguração",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🍞 5º Mistério: A Instituição da Eucaristia",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    friday: {
+                        mystery: "Mistérios Dolorosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "😢 1º Mistério: A Agonia de Jesus no Horto",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 2º Mistério: A Flagelação de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 3º Mistério: A Coroação de Espinhos",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 4º Mistério: Jesus carrega a Cruz no caminho do Calvário",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "😢 5º Mistério: A Crucificação e Morte de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    saturday: {
+                        mystery: "Mistérios Gozosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "🎺 1º Mistério: A Anunciação do Anjo Gabriel a Nossa Senhora",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 2º Mistério: A Visitação de Nossa Senhora à Santa Isabel",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 3º Mistério: O Nascimento de Jesus em Belém",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 4º Mistério: A Apresentação do Menino Jesus no Templo",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🎺 5º Mistério: O Menino Jesus perdido e achado no Templo",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    },
+                    sunday: {
+                        mystery: "Mistérios Gloriosos",
+                        prayers: [
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém.",
+                            "🙏 Creio em Deus Pai todo-poderoso...",
+                            "📿 Pai Nosso que estais nos céus...",
+                            "🌹 Ave Maria (3x) - Para aumentar a Fé, Esperança e Caridade",
+                            "✨ Glória ao Pai...",
+                            "🌟 1º Mistério: A Ressurreição de Jesus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 2º Mistério: A Ascensão de Jesus aos Céus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 3º Mistério: A Descida do Espírito Santo sobre os Apóstolos",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 4º Mistério: A Assunção de Nossa Senhora aos Céus",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌟 5º Mistério: A Coroação de Nossa Senhora no Céu",
+                            "📿 Pai Nosso... 🌹 Ave Maria (10x)...",
+                            "✨ Glória ao Pai...",
+                            "🙏 Ó meu Jesus, perdoai-nos...",
+                            "🌹 Salve Rainha, Mãe de Misericórdia...",
+                            "✝️ Em nome do Pai, do Filho e do Espírito Santo. Amém."
+                        ]
+                    }
+                };
+            }
+
+            selectDay(day) {
+                document.querySelectorAll('.day-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`[data-day="${day}"]`).classList.add('active');
+                
+                const dayData = this.rosaryData[day];
+                if (dayData) {
+                    this.displayRosary(dayData);
+                }
+            }
+
+            displayRosary(dayData) {
+                const content = document.getElementById('rosary-content');
+                const titleEl = document.getElementById('mystery-title');
+                const scriptEl = document.getElementById('rosary-script');
+                
+                titleEl.textContent = dayData.mystery;
+                
+                scriptEl.innerHTML = '';
+                dayData.prayers.forEach((prayer, index) => {
+                    const prayerDiv = document.createElement('div');
+                    prayerDiv.className = 'prayer-line';
+                    prayerDiv.textContent = prayer;
+                    prayerDiv.dataset.index = index;
+                    scriptEl.appendChild(prayerDiv);
+                });
+                
+                content.style.display = 'block';
+                this.currentPrayerIndex = 0;
+            }
+
+            playRosary() {
+                const playBtn = document.getElementById('play-rosary');
+                const pauseBtn = document.getElementById('pause-rosary');
+                
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'flex';
+                
+                this.isPlaying = true;
+                this.continueRosary();
+            }
+
+            pauseRosary() {
+                const playBtn = document.getElementById('play-rosary');
+                const pauseBtn = document.getElementById('pause-rosary');
+                
+                playBtn.style.display = 'flex';
+                pauseBtn.style.display = 'none';
+                
+                this.isPlaying = false;
+                if (this.speechSynthesis) {
+                    this.speechSynthesis.cancel();
+                }
+            }
+
+            continueRosary() {
+                if (!this.isPlaying) return;
+                
+                const prayerLines = document.querySelectorAll('.prayer-line');
+                if (this.currentPrayerIndex >= prayerLines.length) {
+                    this.pauseRosary();
+                    return;
+                }
+                
+                // Highlight current prayer
+                prayerLines.forEach(line => line.classList.remove('highlight'));
+                prayerLines[this.currentPrayerIndex].classList.add('highlight');
+                
+                const prayerText = prayerLines[this.currentPrayerIndex].textContent;
+                const cleanText = prayerText.replace(/[📿🌹✨🙏✝️🎺😢🌟💧💒👑⛰️🍞]/g, '').trim();
+                
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                
+                utterance.onend = () => {
+                    if (this.isPlaying) {
+                        this.currentPrayerIndex++;
+                        setTimeout(() => this.continueRosary(), 2000);
+                    }
+                };
+                
+                this.speechSynthesis.speak(utterance);
+            }
+
+            loadComprehensiveBibleData() {
+                this.bibleData = {
+                    old: [
+                        { name: 'Gênesis', chapters: 50 },
+                        { name: 'Êxodo', chapters: 40 },
+                        { name: 'Levítico', chapters: 27 },
+                        { name: 'Números', chapters: 36 },
+                        { name: 'Deuteronômio', chapters: 34 },
+                        { name: 'Josué', chapters: 24 },
+                        { name: 'Juízes', chapters: 21 },
+                        { name: 'Rute', chapters: 4 },
+                        { name: '1 Samuel', chapters: 31 },
+                        { name: '2 Samuel', chapters: 24 },
+                        { name: '1 Reis', chapters: 22 },
+                        { name: '2 Reis', chapters: 25 },
+                        { name: '1 Crônicas', chapters: 29 },
+                        { name: '2 Crônicas', chapters: 36 },
+                        { name: 'Esdras', chapters: 10 },
+                        { name: 'Neemias', chapters: 13 },
+                        { name: 'Ester', chapters: 10 },
+                        { name: 'Jó', chapters: 42 },
+                        { name: 'Salmos', chapters: 150 },
+                        { name: 'Provérbios', chapters: 31 },
+                        { name: 'Eclesiastes', chapters: 12 },
+                        { name: 'Cântico dos Cânticos', chapters: 8 },
+                        { name: 'Isaías', chapters: 66 },
+                        { name: 'Jeremias', chapters: 52 },
+                        { name: 'Lamentações', chapters: 5 },
+                        { name: 'Ezequiel', chapters: 48 },
+                        { name: 'Daniel', chapters: 12 },
+                        { name: 'Oseias', chapters: 14 },
+                        { name: 'Joel', chapters: 3 },
+                        { name: 'Amós', chapters: 9 },
+                        { name: 'Obadias', chapters: 1 },
+                        { name: 'Jonas', chapters: 4 },
+                        { name: 'Miqueias', chapters: 7 },
+                        { name: 'Naum', chapters: 3 },
+                        { name: 'Habacuque', chapters: 3 },
+                        { name: 'Sofonias', chapters: 3 },
+                        { name: 'Ageu', chapters: 2 },
+                        { name: 'Zacarias', chapters: 14 },
+                        { name: 'Malaquias', chapters: 4 }
+                    ],
+                    new: [
+                        { name: 'Mateus', chapters: 28 },
+                        { name: 'Marcos', chapters: 16 },
+                        { name: 'Lucas', chapters: 24 },
+                        { name: 'João', chapters: 21 },
+                        { name: 'Atos', chapters: 28 },
+                        { name: 'Romanos', chapters: 16 },
+                        { name: '1 Coríntios', chapters: 16 },
+                        { name: '2 Coríntios', chapters: 13 },
+                        { name: 'Gálatas', chapters: 6 },
+                        { name: 'Efésios', chapters: 6 },
+                        { name: 'Filipenses', chapters: 4 },
+                        { name: 'Colossenses', chapters: 4 },
+                        { name: '1 Tessalonicenses', chapters: 5 },
+                        { name: '2 Tessalonicenses', chapters: 3 },
+                        { name: '1 Timóteo', chapters: 6 },
+                        { name: '2 Timóteo', chapters: 4 },
+                        { name: 'Tito', chapters: 3 },
+                        { name: 'Filemon', chapters: 1 },
+                        { name: 'Hebreus', chapters: 13 },
+                        { name: 'Tiago', chapters: 5 },
+                        { name: '1 Pedro', chapters: 5 },
+                        { name: '2 Pedro', chapters: 3 },
+                        { name: '1 João', chapters: 5 },
+                        { name: '2 João', chapters: 1 },
+                        { name: '3 João', chapters: 1 },
+                        { name: 'Judas', chapters: 1 },
+                        { name: 'Apocalipse', chapters: 22 }
+                    ],
+                    verses: {
+                        "João 3:16": "Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna.",
+                        "Salmo 23:1": "O Senhor é o meu pastor, nada me faltará.",
+                        "Romanos 8:28": "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus, daqueles que são chamados segundo o seu propósito.",
+                        "Filipenses 4:13": "Posso todas as coisas naquele que me fortalece.",
+                        "Jeremias 29:11": "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz e não de mal, para vos dar o fim que esperais.",
+                        "Provérbios 3:5-6": "Confia no Senhor de todo o teu coração, e não te estribes no teu próprio entendimento. Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas.",
+                        "Mateus 11:28": "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.",
+                        "2 Timóteo 3:16": "Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça.",
+                        "1 Pedro 5:7": "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.",
+                        "Isaías 41:10": "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça."
+                    }
+                };
+            }
+
+            openBookSelector() {
+                const modal = document.getElementById('book-modal');
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                this.filterBooksByTestament('old');
+            }
+
+            filterBooksByTestament(testament) {
+                const bookList = document.getElementById('book-list');
+                bookList.innerHTML = '';
+                
+                const books = this.bibleData[testament];
+                books.forEach(book => {
+                    const bookBtn = document.createElement('button');
+                    bookBtn.textContent = book.name;
+                    bookBtn.addEventListener('click', () => {
+                        this.selectBook(book);
+                    });
+                    bookList.appendChild(bookBtn);
+                });
+            }
+
+            selectBook(book) {
+                this.closeModal(document.getElementById('book-modal'));
+                this.openChapterSelector(book);
+            }
+
+            openChapterSelector(book) {
+                const modal = document.getElementById('chapter-modal');
+                const title = document.getElementById('chapter-modal-title');
+                const chapterList = document.getElementById('chapter-list');
+                
+                title.textContent = `${book.name} - Escolher Capítulo`;
+                chapterList.innerHTML = '';
+                
+                for (let i = 1; i <= book.chapters; i++) {
+                    const chapterBtn = document.createElement('button');
+                    chapterBtn.textContent = `Capítulo ${i}`;
+                    chapterBtn.addEventListener('click', () => {
+                        this.loadChapter(book.name, i);
+                    });
+                    chapterList.appendChild(chapterBtn);
+                }
+                
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+            }
+
+            loadChapter(bookName, chapter) {
+                this.closeModal(document.getElementById('chapter-modal'));
+                const content = document.getElementById('bible-content');
+                
+                content.innerHTML = `
+                    <div class="chapter-header">
+                        <h3>${bookName} - Capítulo ${chapter}</h3>
+                        <p class="chapter-note">Esta é uma simulação. Em uma implementação real, você conectaria a uma API bíblica.</p>
+                    </div>
+                    <div class="verse" data-verse="1">
+                        <span class="verse-number">1</span>
+                        <span class="verse-text">No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus.</span>
+                    </div>
+                    <div class="verse" data-verse="2">
+                        <span class="verse-number">2</span>
+                        <span class="verse-text">Ele estava no princípio com Deus.</span>
+                    </div>
+                    <div class="verse" data-verse="3">
+                        <span class="verse-number">3</span>
+                        <span class="verse-text">Todas as coisas foram feitas por ele, e sem ele nada do que foi feito se fez.</span>
+                    </div>
+                `;
+            }
+
+            showMagicVerse() {
+                const verses = Object.entries(this.bibleData.verses);
+                const randomIndex = Math.floor(Math.random() * verses.length);
+                const [reference, text] = verses[randomIndex];
+                
+                const content = document.getElementById('bible-content');
+                content.innerHTML = `
+                    <div class="magic-verse">
+                        <h3>✨ Versículo Inspirado do Dia</h3>
+                        <h4>${reference}</h4>
+                        <div class="verse-text">"${text}"</div>
+                        <button class="listen-btn" onclick="app.speakText('${text}', 'pt-BR')">
+                            🔊 Escutar Versículo
+                        </button>
+                    </div>
+                `;
+            }
+
+            changeFontSize(delta) {
+                this.fontSize += delta;
+                this.fontSize = Math.max(12, Math.min(24, this.fontSize));
+                
+                const content = document.getElementById('bible-content');
+                contentchangeFontSize(delta) {
+                this.fontSize += delta;
+                this.fontSize = Math.max(12, Math.min(24, this.fontSize));
+                
+                const content = document.getElementById('bible-content');
+                content.style.fontSize = `${this.fontSize}px`;
+                document.getElementById('font-size-display').textContent = `${this.fontSize}px`;
+            }
+
+            toggleCard(card) {
+                const isExpanded = card.classList.contains('expanded');
+                
+                // Close all cards first
+                document.querySelectorAll('.jesus-card').forEach(c => {
+                    c.classList.remove('expanded');
+                });
+                
+                // If this card wasn't expanded, expand it
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                }
+            }
+
+            closeModal(modal) {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            window.app = new JesusApp();
+        });
+    </script>
+</body>
+</html>
